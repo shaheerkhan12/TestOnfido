@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SdkHandle, init } from 'onfido-sdk-ui';
 import { OnInit, VERSION } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-documentverify',
@@ -14,7 +15,7 @@ export class DocumentverifyComponent {
 
   initOnfido() {
     this.onfido = init({
-      token: 'eyJhbGciOiJFUzUxMiJ9.eyJleHAiOjE2OTk2MjExMzUsInBheWxvYWQiOnsiYXBwIjoiZDdiMzQ4YmYtNTA3NS00MzQxLWJiMGMtNDRlMDJmMTdlNGE0IiwiY2xpZW50X3V1aWQiOiIxYjE5MjBkNS1hZjBiLTQ3NWItYWU4Ny0wNTE1YTY2ZjMyN2IiLCJpc19zYW5kYm94Ijp0cnVlLCJpc19zZWxmX3NlcnZpY2VfdHJpYWwiOnRydWUsImlzX3RyaWFsIjp0cnVlLCJzYXJkaW5lX3Nlc3Npb24iOiI4ZGExNDVjOS01OGUzLTRiYmUtOGYyOC03MjZlNGQ3M2ZhZTUiLCJoYXNfdXNhZ2VfcGxhbiI6ZmFsc2V9LCJ1dWlkIjoicGxhdGZvcm1fc3RhdGljX2FwaV90b2tlbl91dWlkIiwidXJscyI6eyJkZXRlY3RfZG9jdW1lbnRfdXJsIjoiaHR0cHM6Ly9zZGsub25maWRvLmNvbSIsInN5bmNfdXJsIjoiaHR0cHM6Ly9zeW5jLm9uZmlkby5jb20iLCJob3N0ZWRfc2RrX3VybCI6Imh0dHBzOi8vaWQub25maWRvLmNvbSIsImF1dGhfdXJsIjoiaHR0cHM6Ly9hcGkub25maWRvLmNvbSIsIm9uZmlkb19hcGlfdXJsIjoiaHR0cHM6Ly9hcGkub25maWRvLmNvbSIsInRlbGVwaG9ueV91cmwiOiJodHRwczovL2FwaS5vbmZpZG8uY29tIn19.MIGIAkIBRJYTAhzpND19gXzHxYuyrb_VyFBObTCOJ69LsNFILki_pLCcgNbinZvbhXIDCCq4gsnf1nHHLeJ6Dqw94737VI8CQgF_8L3m6YYyMzEGW0qIvc1OLwGggZsi0lkZWyptbhT3csos5ewORn8KSGNI4RV8wBOUXhnrAl_kcRMv4hyKqhJOAg',
+      token: environment.token,
       containerId: 'onfido-mount',
       onComplete: (data:any) => {
         console.log('completed',data);
