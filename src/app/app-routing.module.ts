@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DocumentverifyComponent } from './documentverify/documentverify.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "document", pathMatch: 'full' },
+  { path: "", redirectTo: "", pathMatch: 'full' },
   {path:'document',component: DocumentverifyComponent }
 ];
 
