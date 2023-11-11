@@ -34,7 +34,23 @@ export class DocumentverifyComponent {
         console.log('request close');
         this.onfido.setOptions({ isModalOpen: false });
       }).bind(this),
-      steps: ['welcome', 'document', 'face', 'complete'],
+      steps: ['welcome', 
+      {
+        "type": "document",
+        "options": {
+          "documentTypes": {
+            "driving_licence": {
+              "country": "ARE"
+            },
+            "national_identity_card": {
+              "country":"ARE"
+            },
+            "residence_permit": {
+              "country":"ARE"
+            }
+          }
+        }
+      }, 'face', 'complete'],
       // steps: ['welcome', 'poa', 'document', 'face', 'complete'],
     })
 
